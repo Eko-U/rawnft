@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: 62.5em) {
+    font-size: 56.25%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  color: $color-text;
+}

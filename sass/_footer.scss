@@ -1,0 +1,126 @@
+.footer {
+  @include section;
+  row-gap: 5rem;
+  background-color: rgb(253, 253, 253);
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 0 4rem;    
+  }
+
+  &__newsletter {
+    grid-column: col-start / col-end;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 50em) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+     @media only screen and (max-width: 31.25em) {
+    grid-column: full-start / full-end;
+  }
+  }
+
+  &-nav {
+    grid-column: col-start / col-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    @media only screen and (max-width: 31.25em) {
+    grid-column: full-start / full-end;
+    }
+  }
+
+  &--list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+  }
+
+  &__copyright {
+    grid-column: col-start / col-end;
+  }
+}
+
+.list--links   {
+  /* font-family: 'Inter', sans-serif; */
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+  color: var(--color-grey);
+}
+
+.list-items {
+  list-style: none;
+}
+
+.form {
+
+  display: grid;
+  grid-template-columns: auto min-content;
+  gap: 2rem;
+
+  &__input {
+    height: 4.5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    box-shadow: $shadow-sm;
+    border: 1px solid rgba(0,0,0,0.2);
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__input::placeholder {
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+
+.navigation {
+  grid-column: full-start / full-end;
+  background-color: $color-white;
+  box-shadow: $shadow-sm;
+
+  display: grid;
+  @supports (grid-template-columns: subgrid) {
+    grid-template-columns: subgrid;
+  }
+  grid-template-columns: [full-start] minmax(min-content, 10rem) [col-start] repeat(8, 1fr) [col-end] minmax(min-content, 10rem) [full-end];
+
+  &__logo {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  &__btn {
+    padding: .8rem 1.2rem !important;
+  }
+
+  &__container {
+    grid-column: col-start / col-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    @media only screen and (max-width: 50em) {
+      grid-column: full-start / full-end;
+      padding: 2rem 3rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+
+    @media only screen and (max-width: 50em) {
+      display: none;
+    }
+  }
+}

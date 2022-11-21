@@ -1,0 +1,44 @@
+.header {
+  grid-column: col-start /  col-end;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+
+  @media only screen and (max-width: 62.5em) {
+    grid-column: full-start / full-end;
+  }
+  @media only screen and (max-width: 50em) {
+    padding-top: 5rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 3rem;
+  }
+}
+.header-img {
+  height: 55rem;
+  justify-self: center;
+  animation: slideInLeft 2s ease-in;
+  @media only screen and (max-width: 50em) {
+    height: 45rem;
+    margin-top: -3.5rem;
+  }
+}
+
+.header__content {
+  align-self: center;
+  animation: slideInUp 3s ease-in;
+  @media only screen and (max-width: 50em) {
+    grid-row: 1 / 2;
+    padding: 0 4rem;
+  }
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+}

@@ -1,0 +1,52 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin section {
+  padding: 8rem 0;
+  grid-column: full-start / full-end;
+
+  display: grid;
+  @supports (grid-template-columns: subgrid) {
+    grid-template-columns: subgrid;
+  }
+  grid-template-columns: [full-start] minmax(min-content, 10rem) [col-start] repeat(8, 1fr) [col-end] minmax(min-content, 10rem) [full-end];
+}
+
+@mixin section-content {
+  grid-column: col-start / col-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3rem;
+
+  @media only screen and (max-width: 31.25em) {
+    grid-column: full-start / full-end;
+    padding: 0 4rem;
+  }
+}
+
+@mixin section-heading {
+  grid-column: col-start / col-end;
+}
+
+@mixin verified {
+  justify-self: start;
+    display: inline-grid;
+    grid-template-columns: auto;
+
+    & > * {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    svg {
+      place-self: end;
+      fill: $color-twitter;
+    }
+}

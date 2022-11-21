@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  grid-template-columns: [full-start] minmax(min-content, 10rem) [col-start] repeat(8, 1fr) [col-end] minmax(min-content, 10rem) [full-end];
+}
+
+.notification {
+  grid-column: full-start /  full-end;
+  padding: .5rem 0;
+  background-color: $color-blue-dark;
+  color: $color-white;
+
+  &__text {
+    font-size: 1.2rem;
+    @include flex-center;
+    gap: 2rem;
+  }
+  @media only screen and (max-width: 50em) {
+      display: none;
+  }
+}
+
+.main {
+  padding: 5rem 0 0 0;
+  grid-column: full-start / full-end;
+
+  display: grid;
+  @supports (grid-template-columns: subgrid) {
+    grid-template-columns: subgrid;
+  }
+
+  grid-template-columns: [full-start] minmax(min-content, 10rem) [col-start] repeat(8, 1fr) [col-end] minmax(min-content, 10rem) [full-end];
+}
